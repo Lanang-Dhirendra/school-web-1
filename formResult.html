@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Latihan - 6 Januari 2025</title>
+   </head>
+   <body>
+      <h1 id="name"></h1>
+      <h1 id="password"></h1>
+      <div id="box" style="display: inline-block; height: 100px; width: 100px; border-color: #272439; border-width: 4px;"></div>
+      <p><a href="tablMediaHLinkForm.html#form">back</a></p>
+      <script>
+         function valOrDefault(v, def){
+            return v == undefined ? def : v;
+         }
+         window.onload = function(){
+            var dataStore = new(Map);
+            let loc = location;
+            let queries = loc.search.substring(1).split("&");
+            queries.forEach(elm => {
+               let keyValPair = elm.split("=");
+               let prev = dataStore.get(keyValPair[0]);
+               prev = valOrDefault(prev, "");
+               dataStore.set(keyValPair[0], prev+keyValPair[1]);
+            });
+
+            // logging
+            // console.log(dataStore);
+
+            // name show
+            document.getElementById("name").innerText = valOrDefault(dataStore.get("name"), "<empty name>");
+
+            // password "show"
+            let pw = valOrDefault(dataStore.get("password"), "")
+            for(let i=0; i<pw.length; i++){
+               document.getElementById("password").innerText += "*";
+            };
+            if(pw.length==0){
+               document.getElementById("password").innerText = "<no password>";
+            }
+
+            // box color
+            switch(dataStore.get("color")){
+               case "r"  : dataStore.set("color", "red"); break;
+               case "g"  : dataStore.set("color", "green"); break;
+               case "b"  : dataStore.set("color", "blue"); break;
+               case "rg" : dataStore.set("color", "yellow"); break;
+               case "gb" : dataStore.set("color", "cyan"); break;
+               case "rb" : dataStore.set("color", "magenta"); break;
+               case "rgb": dataStore.set("color", "white"); break;
+               default   : dataStore.set("color", "black"); break;
+            };
+            document.getElementById("box").style.backgroundColor = dataStore.get("color");
+
+            // border styling
+            document.getElementById("box").style.borderStyle = valOrDefault(dataStore.get("border"), "none");
+         }
+      </script>
+   </body>
+</html>

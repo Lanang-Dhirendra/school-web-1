@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Latihan - 6 Januari 2025</title>
+   </head>
+   <body>
+      <!-- Tabel -->
+      <h1>Tabel</h1>
+      <table id="table" border="1" height="200px" width="800px" cellpadding="1" cellspacing="1">
+         <tr>
+            <td width="15%">elemen tabel</td>
+            <td width="35%">dengan lebar tiap sel</td>
+            <td width="50%">berbeda-beda</td>
+         </tr>
+         <tr>
+            <td rowspan="2">sel dengan rowspan 2</td>
+            <td colspan="2">sel dengan colspan 2</td>
+         </tr>
+         <tr>
+            <td>lorem</td>
+            <td>ipsum</td>
+         </tr>
+      </table>
+      <div id="tablePanel" style="display: none;">
+         <input type="number" id="inpTblWd" onchange="document.getElementById('table').style.width = this.value+'px';">
+         <label>width attr. (lebar tabel)</label> <br>
+         <input type="number" id="inpTblCs" onchange="document.getElementById('table').attributes.getNamedItem('cellpadding').nodeValue = this.value;">
+         <label>cellpadding attr. (jarak antara batasan luar sel dan isi sel setiap sel dalam tabel)</label> <br>
+         <input type="number" id="inpTblCp" onchange="document.getElementById('table').attributes.getNamedItem('cellspacing').nodeValue = this.value;">
+         <label>cellspacing attr. (jarak antar sel-sel pada tabel)</label> <br>
+      </div>
+
+      <!-- Multimedia -->
+      <h1>Multimedia</h1>
+      <h2>Gambar</h2>
+      <img src="image_local.jpg" height="180">
+      <h2>Audio</h2>
+      <audio controls>
+         <source src="audio_local.wav" type="audio/wav">
+      </audio>
+      <h2>Video</h2>
+      <video controls height="180">
+         <source src="video_local.mp4" type="video/mp4">
+      </video>
+
+      <!-- Hyperlink -->
+      <h1>Hyperlink</h1>
+      <p><a href="#">sebuah link/tautan</a></p>
+      <p><a href="#" target="test">link dengan target nama frame</a></p>
+      <iframe name="test" style="display: block; width: 80vw; height: 300px;"></iframe>
+      <p><a href="#" target="_blank">link dengan target _blank</a></p>
+      <p><a href="#" title="sebuah link">link dengan title "sebuah link"</a></p>
+      <p><a href="javascript:alert('link dengan script javascript alert')">link yang memanggil script javascript untuk memberi pesan kepada user web</a></p>
+      <p>link dengan menggunakan gambar (klik gambar di bawah)</p>
+      <a href="#"><img src="image.jpg" height="180"></a>
+      <p><a href="https://github.com/Lanang-Dhirendra" target="_blank">link eksternal</a></p>
+      
+      <!-- Formulir -->
+      <h1 id="form">Formulir</h1>
+      <form method="get" action="formResult.html">
+         <label>nama</label>
+         <input type="text" name="name">
+         <br>
+         <label>password</label>
+         <input type="password" name="password">
+         <br>
+         <label>warna</label> <br>
+         <label>merah</label>
+         <input type="checkbox" name="color" value="r">
+         <label>hijau</label>
+         <input type="checkbox" name="color" value="g">
+         <label>biru</label>
+         <input type="checkbox" name="color" value="b">
+         <br>
+         <label>border</label> <br>
+         <select name="border">
+            <option value="none">choose</option>
+            <option value="solid">solid</option>
+            <option value="dashed">dashed</option>
+            <option value="dotted">dotted</option>
+            <option></option>
+         </select>
+         <br>
+         <button type="submit">send</button>
+      </form>
+
+      <!-- script for responsive tablePanel -->
+      <script>
+         window.onload = function(){
+            document.getElementById("tablePanel").style.display = "block";
+            document.getElementById("inpTblWd").value = 800;
+            document.getElementById("inpTblCs").value = 1;
+            document.getElementById("inpTblCp").value = 1;
+         };
+      </script>
+   </body>
+</html>

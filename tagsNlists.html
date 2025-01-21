@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Latihan - 6 Januari 2025</title>
+   </head>
+   <body>
+      <h1>tag tag html</h1>
+
+      <h2>format teks</h2>
+      <p>teks biasa</p>
+      <p><b>teks tebal < b >, < strong ></b></p>
+      <p><i>teks miring < i ></i></p>
+      <p><u>teks cetak bawah < u ></u></p>
+      <p>teks<sub>subscript</sub> < sub ></p>
+      <p>teks<sup>superscript</sup> < sup ></p>
+      <p><del>teks dicoret < del >, < strike ></del></p>
+      <p><mark>teks diblok warna < mark ></mark></p>
+      <p><big>teks besar < big ></big></p>
+
+      <h2>< br ></h2>
+      <p>teks nggak dipotong</p>
+      <p>teks kedua</p>
+      <p>teks<br>dipotong</p>
+      <p>teks keempat</p>
+
+      <h2>< pre ></h2>
+      <p>
+         line 1
+         line 2
+         line 3
+      </p>
+      <pre>
+         line 1
+         line 2
+         line 3
+      </pre>
+      <p>
+         (kedua teks dalam file diformat sama)<br>
+         dalam rendering file html, whitespace (tambahan) yang ada dalam file tidak akan ditampilkan.<br>
+         dengan menggunakan tag < pre >, whitespace tersebut nggak akan dihapus<br>
+         (jadi kalo ada line break dari file html, akan diisi juga di hasil render file)
+      </p>
+
+      <h2>< marquee ></h2>
+      <marquee style="display: inline-block; width: 10%;">
+         sebuah teks yang sangat panjang sehingga melebihi batas panjang elemen html
+      </marquee>
+      <p>(tag ini tidak disarankan untuk digunakan karena disarankan menggunakan styling CSS untuk membuat teks bergerak)</p>
+
+      <h2>< blink ></h2>
+      <blink>teks kedip kedip</blink>
+      <p>(tag ini tidak disarankan untuk digunakan karena tag sudah tidak didukung di web browser sekarang)</p>
+
+      <h2>< blockquote ></h2>
+      <blockquote style="width:280px;">
+         never gonna give you up~<br>
+         never gonna let you down~<br>
+         never gonna run around and desert you~<br>
+         never gonna make you cry~<br>
+         never gonna say goodbye~<br>
+         never gonna tell a lie and hurt you~<br>
+         <span style="display: block; text-align: right;">- Rick Astley</span>
+      </blockquote>
+      <a href="https://youtu.be/dQw4w9WgXcQ?t=42">sumber kutipan</a>
+
+      <h2>list html</h2>
+      <ul>
+         <li>list tidak terurut < ul ></li>
+         <li>menggunakan titik-titik untuk tiap anggota list < li ></li>
+         <li>digunakan untuk list yang anggotanya tidak harus terurut</li>
+         <li>contoh: alat & bahan</li>
+      </ul>
+      <ol>
+         <li>list terurut < ol ></li>
+         <li>menggunakan penomeran untuk tiap anggota list < li ></li>
+         <li>digunakan untuk list yang anggotanya harus terurut</li>
+         <li>contoh: tahap-tahapan membuat sesuatu</li>
+      </ol>
+   </body>
+</html>
