@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Latihan - 21 Januari 2025</title>
+      <link rel="stylesheet" href="style1.css" type="text/css">
+   </head>
+   <body>
+      <a href="index.html">balik ke halaman awal</a>
+      <h1>Styling pada halaman ini berada pada file CSS.</h1>
+      <div class="container" id="container1">
+         <div class="container" id="box1-1">boks 1</div>
+         <div class="container" id="box1-2">boks 2</div>
+         <div class="container" id="box1-3">boks 3</div>
+      </div>
+
+      <!-- a 'v' char using raw html table -->
+      <table width="70%" cellspacing="2">
+         <tr width="100%">
+            <td class="marked"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="marked"></td>
+         </tr>
+         <tr width="100%">
+            <td></td>
+            <td class="marked"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="marked"></td>
+            <td></td>
+         </tr>
+         <tr width="100%">
+            <td></td>
+            <td></td>
+            <td class="marked"></td>
+            <td></td>
+            <td class="marked"></td>
+            <td></td>
+            <td></td>
+         </tr>
+         <tr width="100%">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="marked"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+         </tr>
+      </table>
+
+      <!-- 
+         automated 'v' char
+      -->
+      <div id="tablePanel" style="display: none;">
+         <input type="number" id="sizeV" value="3" min="3" max="21" onchange="generateV()">
+         <button onclick="generateV()">generate</button>
+         <button onclick="resetV()">reset</button>
+      </div>
+      <table width="90%" id="auto-v" style="display: none;" cellspacing="0" cellpadding="0"></table>
+
+      <script>
+         let table = document.getElementById("auto-v");
+         let cell = "<td></td>";
+         let filled = "<td class='marked'></td>";
+         window.onload = function(){
+            document.getElementById("tablePanel").style.display = "block";
+         }
+         function generateV(){
+            // console.time();
+            resetV();
+            makeV(document.getElementById('sizeV').value);
+            // console.timeEnd();
+         }
+         function resetV(){
+            table.innerHTML = "";
+            table.style.display = "none";
+         }
+         function makeV(q) {
+            w = Number(q)
+            for(let i=0; i<(w%2+w)/2; i++){
+               let add = "<tr>";
+               for(let j=0; j<w; j++){
+                  add += j==i||w-j-1==i ? filled : cell
+               }
+               add += "</tr>";
+               table.innerHTML += add;
+            }
+            table.style.display = "block";
+         }
+      </script>
+   </body>
+</html>

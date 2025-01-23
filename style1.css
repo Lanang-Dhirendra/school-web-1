@@ -1,0 +1,64 @@
+/* Styling pada selector element */
+h1 {
+   color: crimson;
+   font-size: 48px;
+}
+
+/* Styling pada selector class */
+.container {
+   display: block;
+   box-sizing: border-box;
+}
+
+/* Styling pada selector id */
+#container1 {
+   background-color: darkred;
+   height: auto;
+   width: auto;
+   margin: 10px;
+   padding: 20px;
+}
+#box1-1 {
+   background-color: salmon;
+   height: 75px;
+   width: 100px;
+   margin: 10px;
+   padding: 20px;
+}
+#box1-2 {
+   background-color: indianred;
+   height: 150px;
+   width: 200px;
+   margin: 10px;
+   padding: 20px;
+}
+#box1-3 {
+   background-color: firebrick;
+   height: 300px;
+   width: 400px;
+   margin: 10px;
+   padding: 20px;
+}
+
+/* container ke2 */
+
+table {
+   background-color: darkred;
+   margin: 10px;
+   padding: 20px;
+}
+
+tr {
+   width: 100%;
+}
+
+td {
+   width: 120px;
+   height: 120px;
+   margin: 0;
+   padding: 0;
+}
+
+.marked {
+   background-color: salmon;
+}
