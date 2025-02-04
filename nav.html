@@ -11,15 +11,39 @@
       nav {
          position: sticky;
          top: 0;
+         height: max-content;
          background-color: darkkhaki;
+         text-align: center;
+         padding: 10px;
+         font-size: 20px;
+      }
+      a {
+         padding: 10px;
+      }
+      h2 {
+         margin: 0;
+      }
+      .header {
+         background-image: url(rick_local.jpg);
+         background-size: cover;
+         background-position-y: center;
+         aspect-ratio: 21/9;
       }
       .box {
-         width: 90%;
          height: 60vh;
          margin: 20px 0;
          padding: 20px;
+         padding-top: 80px;
+      }
+      .profpic {
+         width: 40px;
+         border-radius: 40px;
+         transform: rotateY(180deg);
       }
       #box1 {
+         display: flex;
+         place-content: center;
+         flex-direction: row;
          background-color: beige;
       }
       #box2 {
@@ -28,35 +52,32 @@
       #box3 {
          background-color: burlywood;
       }
+      .box1-inner {
+         flex-grow: 1;
+         margin: 0 10px;
+         background-color: aquamarine;
+      }
    </style>
    <body>
       <nav>
          <a href="index.html">balik ke halaman awal</a>
+         <a href="#">^</a>
          <a href="#box1">boks 1</a>
          <a href="#box2">boks 2</a>
          <a href="#box3">boks 3</a>
+         <a href="https://github.com/Lanang-Dhirendra" target="_blank"><img src="image_local.jpg" class="profpic"></a>
       </nav>
-      <h2>^ pake tag < nav > (dan di-styling)</h2>
-
-      <h2>pake tag < div ></h2>
-      <div>
-         <a href="#box1">boks 1</a>
-         <a href="#box2">boks 2</a>
-         <a href="#box3">boks 3</a>
+      <div class="header">
+         <h2>pake tag < nav > (dan di-styling)</h2>
       </div>
 
-      <h2>langsung pake < a ></h2>
-      <a href="#box1">boks 1</a>
-      <a href="#box2">boks 2</a>
-      <a href="#box3">boks 3</a>
-
-      <ul>
-         <li><a href="#box1">boks 1</a></li>
-         <li><a href="#box2">boks 2</a></li>
-         <li><a href="#box3">boks 3</a></li>
-      </ul>
-
-      <div id="box1" class="box">boks 1</div>
+      <div id="box1" class="box">
+         <div class="box1-inner"></div>
+         <div class="box1-inner"></div>
+         <div class="box1-inner"></div>
+         <div class="box1-inner"></div>
+         <div class="box1-inner"></div>
+      </div>
       <div id="box2" class="box">boks 2</div>
       <div id="box3" class="box">boks 3</div>
    </body>
