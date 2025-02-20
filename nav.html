@@ -3,61 +3,8 @@
    <head>
       <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Latihan - 24 Januari 2025</title>
+      <link rel="stylesheet" href="style2.css" type="text/css">
    </head>
-   <style>
-      body {
-         margin: 0;
-      }
-      nav {
-         position: sticky;
-         top: 0;
-         height: max-content;
-         background-color: darkkhaki;
-         text-align: center;
-         padding: 10px;
-         font-size: 20px;
-      }
-      a {
-         padding: 10px;
-      }
-      h2 {
-         margin: 0;
-      }
-      .header {
-         background-image: url(rick_local.jpg);
-         background-size: cover;
-         background-position-y: center;
-         aspect-ratio: 21/9;
-      }
-      .box {
-         height: 60vh;
-         margin: 20px 0;
-         padding: 20px;
-         padding-top: 80px;
-      }
-      .profpic {
-         width: 40px;
-         border-radius: 40px;
-         transform: rotateY(180deg);
-      }
-      #box1 {
-         display: flex;
-         place-content: center;
-         flex-direction: row;
-         background-color: beige;
-      }
-      #box2 {
-         background-color: blanchedalmond;
-      }
-      #box3 {
-         background-color: burlywood;
-      }
-      .box1-inner {
-         flex-grow: 1;
-         margin: 0 10px;
-         background-color: aquamarine;
-      }
-   </style>
    <body>
       <nav>
          <a href="index.html">balik ke halaman awal</a>
@@ -65,20 +12,61 @@
          <a href="#box1">boks 1</a>
          <a href="#box2">boks 2</a>
          <a href="#box3">boks 3</a>
-         <a href="https://github.com/Lanang-Dhirendra" target="_blank"><img src="image_local.jpg" class="profpic"></a>
+         <a href="#footer">contact me</a>
+         <a href="https://github.com/Lanang-Dhirendra" target="_blank"><img srcset="image_local.jpg" class="profpic"></a>
       </nav>
-      <div class="header">
-         <h2>pake tag < nav > (dan di-styling)</h2>
+      <div class="header"></div>
+
+      <div id="box1" class="box-outer">
+         <div class="box-inner">
+            <h3>boks 1</h3>
+            <div class="img-holder">
+               <div id="bx1-0" class="box1-inner" onclick="detail(0)" style="background-image: url(triangle.png);"></div>
+               <div id="bx1-1" class="box1-inner" onclick="detail(1)" style="background-image: url(square.png);"></div>
+               <div id="bx1-2" class="box1-inner" onclick="detail(2)" style="background-image: url(circle.png);"></div>
+               <div id="bx1-3" class="box1-inner" onclick="detail(3)" style="background-image: url(star.png);"></div>
+               <div id="bx1-4" class="box1-inner" onclick="detail(4)" style="background-image: url(diamond.png);"></div>
+            </div>
+         </div>
+      </div>
+      <div id="box2" class="box-outer">
+         <div class="box-inner">
+            <h3>boks 2</h3>
+            <div id="click-result">
+               <span id="desc-0" class="hidden">segitiga adalah bangun datar yang memiliki tiga sisi dan tiga sudut.</span>
+               <span id="desc-1" class="hidden">persegi adalah bangun datar yang memiliki empat sisi dan empat sudut yang masing-masing sisinya sama panjang, sehingga semua sudutnya sama besar.</span>
+               <span id="desc-2" class="hidden">lingkaran adalah bangun datar yang di mana setiap titik pada kelilingnya memiliki jarak yang sama ke pusat lingkarannya.</span>
+               <span id="desc-3" class="hidden">pola bintang dengan empat sudut.</span>
+               <span id="desc-4" class="hidden">pola wajik.</span>
+            </div>
+         </div>
+      </div>
+      <div id="box3" class="box-outer">
+         <div class="box-inner">
+            <h3>boks 3</h3>
+         </div>
       </div>
 
-      <div id="box1" class="box">
-         <div class="box1-inner"></div>
-         <div class="box1-inner"></div>
-         <div class="box1-inner"></div>
-         <div class="box1-inner"></div>
-         <div class="box1-inner"></div>
+      <div id="footer" class="box-outer">
+         <div class="box-inner">
+            <a target="_blank" href="https://github.com/Lanang-Dhirendra">GitHub</a>
+            <a target="_blank" href="https://www.instagram.com/heyitslanang">Instagram</a>
+            <a target="_blank" href="mailto:a.lanangdhirendra.slub@gmail.com">Email</a>
+            <br>
+            <p>2025 - Lanang Dhirendra</p>
+         </div>
       </div>
-      <div id="box2" class="box">boks 2</div>
-      <div id="box3" class="box">boks 3</div>
+
+      <script>
+         var focusDesc = -1;
+         function detail(img) {
+            if(focusDesc>=0){
+               document.getElementById("desc-"+focusDesc).style.display = "";
+            }
+            focusDesc = img;
+            document.getElementById("click-result").style.backgroundImage = document.getElementById("bx1-"+focusDesc).style.backgroundImage;
+            document.getElementById("desc-"+focusDesc).style.display = "inline";
+         }
+      </script>
    </body>
 </html>
