@@ -4,6 +4,7 @@ html {
    color: darkred;
 }
 body {
+   background-color: #fefdf8;
    margin: 0;
 }
 .hidden {
@@ -16,13 +17,14 @@ body {
 }
 .box-inner {
    min-height: 10vh;
+   height: fit-content;
    margin: 0;
    padding: 20px;
    top: 80px;
 }
 h3 {
    text-align: center;
-   font-size: 24px;
+   font-size: 28px;
    margin-top: 0;
    margin-bottom: 0.5em;
 }
@@ -32,11 +34,11 @@ nav {
    position: sticky;
    top: 0;
    height: max-content;
-   background-color: darkkhaki;
+   background-color: bisque;
    text-align: center;
    padding: 10px;
    font-size: 20px;
-   z-index: 10;
+   z-index: 3;
 }
 nav a {
    padding: 10px;
@@ -52,7 +54,55 @@ nav a {
    background-image: url(media/rick_local.jpg);
    background-size: cover;
    background-position-y: center;
-   aspect-ratio: 21/9;
+   height: 100vh;
+}
+
+#to-top {
+   position: fixed;
+   right: 40px;
+   bottom: 40px;
+   background-color: bisque;
+   font-size: 40px;
+   text-decoration: none;
+   z-index: 5;
+   padding: 0.3em 0.35em;
+   border: 2px solid firebrick;
+   aspect-ratio: 1/1;
+}
+
+/* footer */
+#footer .box-inner {
+   display: flex;
+   background-color: antiquewhite;
+   text-align: center;
+   font-size: 20px;
+}
+#footer a {
+   display: inline-block;
+   width: min-content;
+   text-decoration: none;
+   padding: 10px;
+}
+#footer a i {
+   font-size: 80px;
+}
+#footer a span {
+   font-size: 16px;
+}
+.footer-elm {
+   margin: 0 2%;
+}
+.footer-links {
+   width: 24%;
+}
+.map {
+   display: flex;
+   width: 68%;
+}
+#sch-loc {
+   padding: 0 60px;
+   flex-grow: 1;
+   min-height: 40vh;
 }
 
 /* box 1 */
@@ -69,9 +119,9 @@ nav a {
 .box1-inner {
    display: flex;
    flex-grow: 1;
-   height: 30vh;
+   height: 40vh;
    margin: 0 10px;
-   background-position: 8%;
+   background-position: 50%;
    cursor: pointer;
 }
 .box1-inner::after {
@@ -93,25 +143,23 @@ nav a {
 /* box 2 */
 #box2 .box-inner {
    background-color: beige;
+   background-position: 50%;
 }
-#click-result {
+#detail-box {
    width: inherit;
-   height: 100px;
    background-color: inherit;
    background-blend-mode: soft-light;
+}
+#detail-content {
    display: flex;
+}
+#detail-content div {
+   margin: 0 2%;
+}
+#detail-desc {
    flex-grow: 1;
-}
-
-/* box 3 */
-#box3 .box-inner {
-   background-color: burlywood;
-}
-
-/* footer */
-#footer .box-inner {
-   background-color: darkkhaki;
-}
-#footer a {
-   padding: 10px;
+   padding-top: 2%;
+   padding-bottom: 2%;
+   font-size: 20px;
+   text-align: justify;
 }

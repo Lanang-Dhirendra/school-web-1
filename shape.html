@@ -16,18 +16,32 @@
       <div class="header"></div>
       <a href="#" id="to-top"><i class="fa fa-arrow-up"></i></a>
 
-      <div id="box1" class="box-outer">
-         <div class="box-inner">
-            <h3>shapes gallery</h3>
-            <div class="img-holder">
-
-               <!-- update img -->
-
-               <a id="bx1-1" class="box1-inner" href="./shape.html?shape=triangle#box2" title="segitiga"  style="background-image: url(media/triangle-bg.png);"></a>
-               <a id="bx1-2" class="box1-inner" href="./shape.html?shape=square#box2"   title="persegi"   style="background-image: url(media/square-bg.png);"></a>
-               <a id="bx1-3" class="box1-inner" href="./shape.html?shape=circle#box2"   title="lingkaran" style="background-image: url(media/circle-bg.png);"></a>
-               <a id="bx1-4" class="box1-inner" href="./shape.html?shape=star#box2"     title="bintang"   style="background-image: url(media/star-bg.png);"></a>
-               <a id="bx1-5" class="box1-inner" href="./shape.html?shape=diamond#box2"  title="wajik"     style="background-image: url(media/diamond-bg.png);"></a>
+      <div id="box2" class="box-outer">
+         <div class="box-inner" id="detail-box">
+            <h3>details</h3>
+            <div id="detail-content">
+               <div>
+                  <img id="shape-img">
+               </div>
+               <div id="detail-desc">
+                  <span id="desc-triangle" class="hidden">
+                     Segitiga adalah bangun datar yang memiliki tiga sisi dan tiga sudut.
+                  </span>
+                  <span id="desc-square"   class="hidden">
+                     Persegi adalah bangun datar yang memiliki empat sisi dan empat sudut yang masing-masing sisinya sama panjang, 
+                     sehingga semua sudutnya sama besar.
+                  </span>
+                  <span id="desc-circle"   class="hidden">
+                     Lingkaran adalah bangun datar yang di mana setiap titik pada kelilingnya memiliki jarak yang sama ke pusat lingkarannya.
+                  </span>
+                  <span id="desc-star"     class="hidden">
+                     Bintang dengan empat sudut. Termasuk bangun datar segi delapan, yang jumlah besar sudutnya 1080<sup>0</sup>
+                  </span>
+                  <span id="desc-diamond"  class="hidden">
+                     Wajik termasuk bentuk belah ketupat. 
+                     Belah ketupat adalah bangun datar yang memiliki panjang sisi sama panjang dan besar sudut yang berlawanan memiliki besar sudut yang sama.
+                  </span>
+               </div>
             </div>
          </div>
       </div>
@@ -40,6 +54,23 @@
          }
          window.onload = toTopBtn();
          window.addEventListener("scroll", (event) => toTopBtn());
+
+         window.onload = function(){
+            // query parser
+            let queMap = new Map();
+            let queArr = location.search.substring(1).split("&");
+            queArr.forEach(q => {
+               let thing = q.split("=");
+               queMap.set(thing[0], thing[1]);
+            });
+            //console.log(location.search, queMap);
+
+            let shape = queMap.get("shape");
+            document.getElementById("detail-box").style.backgroundImage = "url(media/"+shape+"-bg.png)";
+            document.getElementById("shape-img").src = "media/"+shape+".png";
+            document.getElementById("desc-"+shape).style.display = "inline";
+            document.getElementById("desc-"+shape).style.display = "inline";
+         }
       </script>
 
       <div id="footer" class="box-outer">
