@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="smooth-scroll">
    <head>
       <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Latihan - 24 Januari 2025</title>
@@ -8,13 +8,41 @@
    </head>
    <body>
       <nav>
-         <a href="index.html">balik ke halaman awal</a>
-         <a href="./nav.html#box1">shapes</a>
+         <a href="index.html" class="hidden">balik ke halaman awal</a>
+         <a href="./nav.html#box1">home</a>
          <a href="#footer">contact me</a>
          <a href="#footer"><img src="media/image_local.jpg" class="profpic"></a>
+         <span id="userTxt"></span>
+         <button id="login-btn" class="btn" onclick="showLogin()">login</button>
+         <button id="logout-btn" class="btn hidden" onclick="logout()">logout</button>
       </nav>
       <div class="header"></div>
       <a href="#" id="to-top"><i class="fa fa-arrow-up"></i></a>
+
+      <div id="login-modal" class="hidden">
+         <div id="acc-box">
+            <div id="login-box">
+               <form method="get" action="nav.html">
+                  <h2 class="login-text" style="font-size: 32px;">login</h2> <br>
+                  <input type="text" id="user-input" name="user" placeholder="user" minlength="1" maxlength="50"> <br>
+                  <input type="password" placeholder="password"> <br>
+                  <input type="checkbox"><label>remember me</label> <br>
+                  <button onclick="login()" type="submit">submit</button> <br>
+                  <span class="acc-link" onclick="showRegister()">register</span> <br>
+               </form>
+            </div>
+            <div id="register-box">
+               <div>
+                  <h2 class="login-text" style="font-size: 32px;">register</h2> <br>
+                  <input type="text" name="user" placeholder="user" minlength="1" maxlength="50"> <br>
+                  <input type="email" placeholder="email"> <br>
+                  <input type="password" placeholder="password"> <br>
+                  <button onclick="register()" type="button">submit</button> <br>
+                  <span class="acc-link" onclick="showLogin()">login</span> <br>
+               </div>
+            </div>
+         </div>
+      </div>
 
       <div id="box2" class="box-outer">
          <div class="box-inner" id="detail-box">
@@ -46,32 +74,7 @@
          </div>
       </div>
 
-      <script>
-         function toTopBtn(){
-            let scrollPos = this.scrollY;
-            // console.log(scrollPos, screen.height);
-            document.getElementById("to-top").style.display = scrollPos>600 ? "block" : "none";
-         }
-         window.onload = toTopBtn();
-         window.addEventListener("scroll", (event) => toTopBtn());
-
-         window.onload = function(){
-            // query parser
-            let queMap = new Map();
-            let queArr = location.search.substring(1).split("&");
-            queArr.forEach(q => {
-               let thing = q.split("=");
-               queMap.set(thing[0], thing[1]);
-            });
-            //console.log(location.search, queMap);
-
-            let shape = queMap.get("shape");
-            document.getElementById("detail-box").style.backgroundImage = "url(media/"+shape+"-bg.png)";
-            document.getElementById("shape-img").src = "media/"+shape+".png";
-            document.getElementById("desc-"+shape).style.display = "inline";
-            document.getElementById("desc-"+shape).style.display = "inline";
-         }
-      </script>
+      <script src="script1.js"></script>
 
       <div id="footer" class="box-outer">
          <div class="box-inner">
